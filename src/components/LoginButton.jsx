@@ -13,7 +13,7 @@ function LoginButton() {
   };
   return (
     <div style={loginBtnParent}>
-      <Link to='/login' style={loginBtnChild} className="waves-effect waves-light btn-large"><i className="material-icons right">account_box</i>Employee Login</Link>
+      <Link to='/login' style={loginBtnChild} className="waves-effect waves-light btn-large"><i className="material-icons right">account_circle</i>Employee Login</Link>
     </div>
   );
 }
