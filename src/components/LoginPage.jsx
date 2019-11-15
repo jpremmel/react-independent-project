@@ -30,7 +30,7 @@ function LoginPage() {
           type='text'
           placeholder='Username or Employee ID'/>
         <input
-          type='text'
+          type='password'
           placeholder='Password'/>
         <div style={loginBtnParent}>
           <Link to='/' style={loginBtnStyle} className="waves-effect waves-light btn-large"><i className="material-icons right">chevron_right</i>Log in</Link>
