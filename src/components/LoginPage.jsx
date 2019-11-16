@@ -33,7 +33,7 @@ function LoginPage() {
           type='password'
           placeholder='Password'/>
         <div style={loginBtnParent}>
-          <Link to='/' style={loginBtnStyle} className="waves-effect waves-light btn-large"><i className="material-icons right">chevron_right</i>Log in</Link>
+          <Link to='/new' style={loginBtnStyle} className="waves-effect waves-light btn-large"><i className="material-icons right">chevron_right</i>Log in</Link>
         </div>
       </form>
     </div>
