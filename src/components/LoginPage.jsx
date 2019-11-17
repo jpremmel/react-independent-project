@@ -7,7 +7,7 @@ function LoginPage() {
     display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: '100px',
+    marginTop: '80px',
     width: '40%'
   };
   var loginText = {

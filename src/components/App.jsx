@@ -10,10 +10,10 @@ function App() {
     <div>
       <Header/>
       <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/login' component={LoginPage} />
-          <Route path='/new' component={NewPage} />
-        </Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route path='/login' component={LoginPage} />
+        <Route path='/new' component={NewPage} />
+      </Switch>
     </div>
   );
 }
