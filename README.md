@@ -8,6 +8,13 @@
 
 _This is an ongoing project that will ultimately be a mock site for a coffee supplier. Patrons will be able to view the coffee house's menu and employees will be able to log in to manage the inventory. The main purpose of this project is to practice building a site with React._
 
+_Component Structure:_
+
+<img src="JavaHouse-Components.png"
+     alt="Diagram of Java House project components"
+     style="float: center" 
+     height= "400" /> 
+
 ## Setup/Installation Requirements
 
 * _Clone this repository_
