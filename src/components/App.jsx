@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+      masterCoffeeList: {}
     };
   };
 
@@ -20,7 +20,8 @@ class App extends React.Component {
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' component={HomePage} />
+          <Route exact path='/' render={() => <HomePage
+            coffeeList={this.state.masterCoffeeList} />}/>
           <Route path='/login' component={LoginPage} />
           <Route path='/new' component={NewPage} />
         </Switch>

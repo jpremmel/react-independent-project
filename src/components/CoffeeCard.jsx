@@ -34,7 +34,8 @@ CoffeeCard.propTypes = {
   description: PropTypes.string,
   roastType: PropTypes.string,
   roastValue: PropTypes.number,
-  price: PropTypes.number
+  price: PropTypes.number,
+  coffeeId: PropTypes.string
 };
 
 export default CoffeeCard;
