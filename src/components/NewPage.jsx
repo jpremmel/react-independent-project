@@ -1,6 +1,6 @@
 import React from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class NewPage extends React.Component {
@@ -12,10 +12,10 @@ class NewPage extends React.Component {
     };
     this._title = null;
     this._description = null;
-    this.handleAddingNewCoffee = this.handleAddingNewCoffee.bind(this);
+    this.handleAddNewCoffee = this.handleAddNewCoffee.bind(this);
   }
 
-  handleAddingNewCoffee(event) {
+  handleAddNewCoffee(event) {
     event.preventDefault();
     this.props.onNewCoffeeCreation({ title: this._title.value, description: this._description.value }); //add rest of coffee props
     this._title.value = '';
@@ -25,30 +25,30 @@ class NewPage extends React.Component {
   }
 
   render() {
-    const newParentStyle = {
+    let newParentStyle = {
       display: 'block',
       marginLeft: 'auto',
       marginRight: 'auto',
       marginTop: '80px',
       width: '40%'
     };
-    const newHeaderText = {
+    let newHeaderText = {
       textAlign: 'center',
       color: '#2c2321',
       fontFamily: 'Libre Franklin, sans-serif',
     };
-    const roastText = {
+    let roastText = {
       color: '#2c2321',
       fontFamily: 'Libre Franklin, sans-serif',
     };
-    const placeholderText = {
+    let placeholderText = {
       fontFamily: 'Libre Franklin, sans-serif',
     };
-    const newBtnParent = {
+    let newBtnParent = {
       textAlign: 'center',
       marginTop: '20px'
     };
-    const newBtnStyle = {
+    let newBtnStyle = {
       backgroundColor: '#2c2321',
     };
 
@@ -56,7 +56,7 @@ class NewPage extends React.Component {
       <div style={newParentStyle}>
         {this.state.redirect ? <Redirect to='/' /> : ''}
         <h3 style={newHeaderText}>Add New Java</h3>
-        <form onSubmit={this.handleAddingNewCoffee}>
+        <form onSubmit={this.handleAddNewCoffee}>
           <style jsx>{`
               .input-field input[type=text]:focus {
                 border-bottom: 1px solid #2c2321;
@@ -115,7 +115,7 @@ class NewPage extends React.Component {
           </div>
 
           <div style={newBtnParent}>
-            <Link to='/' style={newBtnStyle} className='waves-effect waves-light btn-large'><i className='material-icons right'>local_cafe</i>Add</Link>
+            <button type='submit' style={newBtnStyle} className='waves-effect waves-light btn-large'><i className='material-icons right'>local_cafe</i>Add</button>
           </div>
         </form>
       </div>

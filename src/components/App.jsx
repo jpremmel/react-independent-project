@@ -13,6 +13,7 @@ class App extends React.Component {
     this.state = {
       masterCoffeeList: {}
     };
+    this.handleAddingNewCoffee = this.handleAddingNewCoffee.bind(this);
   };
 
   handleAddingNewCoffee(newCoffee){
@@ -24,6 +25,7 @@ class App extends React.Component {
   }
 
   render () {
+    console.log(this.state.masterCoffeeList);
     return (
       <div>
         <Header/>
@@ -31,12 +33,11 @@ class App extends React.Component {
           <Route exact path='/' render={() => <HomePage
             coffeeList={this.state.masterCoffeeList} />}/>
           <Route path='/login' component={LoginPage} />
-          <Route path='/new' redner={() => <NewPage
+          <Route path='/new' render={() => <NewPage
             onNewCoffeeCreation={this.handleAddingNewCoffee} />}/>
         </Switch>
       </div>
     );
-
   }
 }
   

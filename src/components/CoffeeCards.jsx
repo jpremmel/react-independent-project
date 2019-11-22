@@ -31,7 +31,7 @@ function CoffeeCards(props) {
 }
 
 CoffeeCards.propTypes = {
-  coffeeList: PropTypes.array
+  coffeeList: PropTypes.object
 };
 
 export default CoffeeCards;

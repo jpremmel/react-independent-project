@@ -16,7 +16,7 @@ function HomePage(props) {
 }
 
 HomePage.propTypes = {
-  coffeeList: PropTypes.array
+  coffeeList: PropTypes.object
 };
 
 export default HomePage;
