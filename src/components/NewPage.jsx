@@ -18,8 +18,7 @@ class NewPage extends React.Component {
   handleAddNewCoffee(event) {
     event.preventDefault();
     let { roast } = this.form;
-    console.log(roast, roast.value);
-    this.props.onNewCoffeeCreation({ title: this._title.value, description: this._description.value }); //add rest of coffee props
+    this.props.onNewCoffeeCreation({ title: this._title.value, description: this._description.value, roastType: roast.value}); //add rest of coffee props
     this._title.value = '';
     this._description.value = '';
     //rest of coffee props
@@ -101,19 +100,19 @@ class NewPage extends React.Component {
             <p style={roastText}>Roast:</p>
             <p>
               <label htmlFor='light'>
-                <input className='with-gap' name='roast' type='radio' id='light' />
+                <input className='with-gap' name='roast' type='radio' id='light' value='Light' />
                 <span style={roastText}>Light</span>
               </label>
             </p>
             <p>
               <label htmlFor='medium'>
-                <input className='with-gap' name='roast' type='radio' id='medium' />
+                <input className='with-gap' name='roast' type='radio' id='medium' value='Medium' />
                 <span style={roastText}>Medium</span>
               </label>
             </p>
             <p>
               <label htmlFor='dark'>
-                <input className='with-gap' name='roast' type='radio' id='dark' />
+                <input className='with-gap' name='roast' type='radio' id='dark' value='Dark' />
                 <span style={roastText}>Dark</span>
               </label>
             </p>
