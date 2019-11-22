@@ -15,6 +15,14 @@ class App extends React.Component {
     };
   };
 
+  handleAddingNewCoffee(newCoffee){
+    let newCoffeeId = v4();
+    let copyCoffeeList = Object.assign({}, this.state.masterCoffeeList, {
+      [newCoffeeId]: newCoffee
+    });
+    this.setState({ masterCoffeeList: copyCoffeeList });
+  }
+
   render () {
     return (
       <div>
@@ -23,7 +31,8 @@ class App extends React.Component {
           <Route exact path='/' render={() => <HomePage
             coffeeList={this.state.masterCoffeeList} />}/>
           <Route path='/login' component={LoginPage} />
-          <Route path='/new' component={NewPage} />
+          <Route path='/new' redner={() => <NewPage
+            onNewCoffeeCreation={this.handleAddingNewCoffee} />}/>
         </Switch>
       </div>
     );
