@@ -4,15 +4,15 @@ import 'materialize-css/dist/css/materialize.min.css';
 import { Link } from 'react-router-dom';
 
 function CoffeeCard(props) {
-  var cardStyle = {
+  let cardStyle = {
     backgroundColor: '#cfb496'
   };
-  var titleStyle = {
+  let titleStyle = {
     textAlign: 'center',
     color: '#2c2321',
     fontFamily: 'Libre Franklin, sans-serif',
   };
-  var darkText = {
+  let darkText = {
     color: '#2c2321'
   };
   return (

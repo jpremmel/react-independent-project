@@ -3,12 +3,12 @@ import 'materialize-css/dist/css/materialize.min.css';
 import { Link } from 'react-router-dom';
 
 function LoginButton() {
-  var loginBtnParent = {
+  let loginBtnParent = {
     textAlign: 'center',
     marginTop: '25px',
     marginBottom: '25px',
   };
-  var loginBtnChild = {
+  let loginBtnChild = {
     backgroundColor: '#2c2321'
   };
   return (

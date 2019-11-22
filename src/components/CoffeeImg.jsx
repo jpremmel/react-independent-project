@@ -2,7 +2,7 @@ import React from 'react';
 import Coffee from '../assets/images/coffee.jpg';
 
 function CoffeeImg() {
-  var imgStyle ={
+  let imgStyle ={
     backgroundImage: `url(${Coffee})`,
     backgroundAttachment: 'fixed',
     height: '800px',

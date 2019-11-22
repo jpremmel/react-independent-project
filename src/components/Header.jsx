@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Header() {
-  var headerStyle = {
+  let headerStyle = {
     textAlign: 'center',
     color: '#2c2321',
     fontFamily: 'Libre Franklin, sans-serif',

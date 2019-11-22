@@ -4,7 +4,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import PropTypes from 'prop-types'
 
 function CoffeeCards(props) {
-  var headerText = {
+  let headerText = {
     textAlign: 'center',
     color: '#2c2321',
     fontFamily: 'Libre Franklin, sans-serif',
@@ -14,7 +14,7 @@ function CoffeeCards(props) {
       <h3 style={headerText}>Our Coffees</h3>
       <div className='row'>
         {Object.keys(props.coffeeList).map((coffeeId) => {
-          var coffee = props.coffeeList[coffeeId];
+          let coffee = props.coffeeList[coffeeId];
           return <CoffeeCard 
             title={coffee.title}
             description={coffee.description}

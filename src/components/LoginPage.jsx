@@ -3,26 +3,26 @@ import 'materialize-css/dist/css/materialize.min.css';
 import { Link } from 'react-router-dom';
 
 function LoginPage() {
-  var loginParentStyle = {
+  let loginParentStyle = {
     display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: '80px',
     width: '40%'
   };
-  var loginText = {
+  let loginText = {
     textAlign: 'center',
     color: '#2c2321',
     fontFamily: 'Libre Franklin, sans-serif',
   };
-  var loginBtnParent = {
+  let loginBtnParent = {
     textAlign: 'center',
     marginTop: '20px'
   };
-  var loginBtnStyle = {
+  let loginBtnStyle = {
     backgroundColor: '#2c2321',
   };
-  var placeholderText = {
+  let placeholderText = {
     fontFamily: 'Libre Franklin, sans-serif',
   };
   return (
