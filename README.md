@@ -1,6 +1,6 @@
 # _Java House_
 
-#### _A site for a fictional coffee supplier created with React, 17 Nov 2019_
+#### _A site for a fictional coffee supplier created with React, 22 Nov 2019_
 
 #### By _**Jacqueline Remmel**_
 
