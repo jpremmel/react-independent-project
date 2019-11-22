@@ -17,6 +17,8 @@ class NewPage extends React.Component {
 
   handleAddNewCoffee(event) {
     event.preventDefault();
+    let { roast } = this.form;
+    console.log(roast, roast.value);
     this.props.onNewCoffeeCreation({ title: this._title.value, description: this._description.value }); //add rest of coffee props
     this._title.value = '';
     this._description.value = '';
@@ -56,7 +58,10 @@ class NewPage extends React.Component {
       <div style={newParentStyle}>
         {this.state.redirect ? <Redirect to='/' /> : ''}
         <h3 style={newHeaderText}>Add New Java</h3>
-        <form onSubmit={this.handleAddNewCoffee}>
+        <form 
+          onSubmit={this.handleAddNewCoffee}
+          ref={form => this.form = form}>
+
           <style jsx>{`
               .input-field input[type=text]:focus {
                 border-bottom: 1px solid #2c2321;
