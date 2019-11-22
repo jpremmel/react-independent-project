@@ -30,7 +30,7 @@ function CoffeeCard(props) {
 }
 
 CoffeeCard.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   description: PropTypes.string,
   roastType: PropTypes.string,
   roastValue: PropTypes.number,
