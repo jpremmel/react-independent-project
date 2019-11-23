@@ -20,19 +20,22 @@ class NewPage extends React.Component {
   handleAddNewCoffee(event) {
     event.preventDefault();
     let { roast } = this.form;
+
     console.log('Title: ', this._title.value)
     console.log('Roast: ', this._roastValue.value);
     console.log('Price: ', this._price.value);
-    this.props.onNewCoffeeCreation({ 
-      title: this._title.value, 
-      description: this._description.value, 
-      roastType: roast.value,
-      roastValue: this._roastValue.value,
-      price: this._price.value
-    });
-    this._title.value = '';
-    this._description.value = '';
-    this.setState({ redirect: true });
+    if (this._title.value) {
+      this.props.onNewCoffeeCreation({ 
+        title: this._title.value, 
+        description: this._description.value, 
+        roastType: roast.value,
+        roastValue: this._roastValue.value,
+        price: this._price.value
+      });
+      this._title.value = '';
+      this._description.value = '';
+      this.setState({ redirect: true });
+    }
   }
 
   render() {
@@ -92,6 +95,7 @@ class NewPage extends React.Component {
               placeholder='Title'
               style={placeholderText}
               id='title'
+              required='required'
               ref={(input) => { this._title = input; }}
             />
           </div>
@@ -133,8 +137,8 @@ class NewPage extends React.Component {
               <input type='range' id='test5' min='1' max='10' />
             </p> */}
             <input
-              type='number'
-              placeholder='Roast ranking: 1 (lightest) - 10 (darkest).'
+              type='text'
+              placeholder='Roast ranking: 1 (lightest) - 10 (darkest)'
               style={placeholderText}
               id='roastValue'
               ref={(input) => { this._roastValue = input; }}
@@ -143,7 +147,7 @@ class NewPage extends React.Component {
 
           <div className='input-field'>
             <input
-              type='number'
+              type='text'
               placeholder='Price per pound'
               style={placeholderText}
               id='price'
