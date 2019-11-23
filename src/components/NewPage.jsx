@@ -20,14 +20,15 @@ class NewPage extends React.Component {
   handleAddNewCoffee(event) {
     event.preventDefault();
     let { roast } = this.form;
-    console.log('Roast: ', this._roastValue);
-    console.log('Price: ', this._price);
+    console.log('Title: ', this._title.value)
+    console.log('Roast: ', this._roastValue.value);
+    console.log('Price: ', this._price.value);
     this.props.onNewCoffeeCreation({ 
       title: this._title.value, 
       description: this._description.value, 
       roastType: roast.value,
-      roastValue: this._roastValue,
-      price: this._price
+      roastValue: this._roastValue.value,
+      price: this._price.value
     });
     this._title.value = '';
     this._description.value = '';
@@ -128,16 +129,16 @@ class NewPage extends React.Component {
           </div>
 
           <div className='input-field'>
-          <p className='range-field'>
-            <input type='range' id='test5' min='1' max='10' />
-          </p>
-            {/* <input
+            {/* <p className='range-field'>
+              <input type='range' id='test5' min='1' max='10' />
+            </p> */}
+            <input
               type='number'
               placeholder='Roast ranking: 1 (lightest) - 10 (darkest).'
               style={placeholderText}
               id='roastValue'
               ref={(input) => { this._roastValue = input; }}
-            /> */}
+            />
           </div>
 
           <div className='input-field'>
