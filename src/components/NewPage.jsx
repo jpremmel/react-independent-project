@@ -12,16 +12,25 @@ class NewPage extends React.Component {
     };
     this._title = null;
     this._description = null;
+    this._roastValue = null;
+    this._price = null;
     this.handleAddNewCoffee = this.handleAddNewCoffee.bind(this);
   }
 
   handleAddNewCoffee(event) {
     event.preventDefault();
     let { roast } = this.form;
-    this.props.onNewCoffeeCreation({ title: this._title.value, description: this._description.value, roastType: roast.value}); //add rest of coffee props
+    console.log('Roast: ', this._roastValue);
+    console.log('Price: ', this._price);
+    this.props.onNewCoffeeCreation({ 
+      title: this._title.value, 
+      description: this._description.value, 
+      roastType: roast.value,
+      roastValue: this._roastValue,
+      price: this._price
+    });
     this._title.value = '';
     this._description.value = '';
-    //rest of coffee props
     this.setState({ redirect: true });
   }
 
@@ -116,6 +125,29 @@ class NewPage extends React.Component {
                 <span style={roastText}>Dark</span>
               </label>
             </p>
+          </div>
+
+          <div className='input-field'>
+          <p className='range-field'>
+            <input type='range' id='test5' min='1' max='10' />
+          </p>
+            {/* <input
+              type='number'
+              placeholder='Roast ranking: 1 (lightest) - 10 (darkest).'
+              style={placeholderText}
+              id='roastValue'
+              ref={(input) => { this._roastValue = input; }}
+            /> */}
+          </div>
+
+          <div className='input-field'>
+            <input
+              type='number'
+              placeholder='Price per pound'
+              style={placeholderText}
+              id='price'
+              ref={(input) => { this._price = input; }}
+            />
           </div>
 
           <div style={newBtnParent}>

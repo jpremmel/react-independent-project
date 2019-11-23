@@ -44,8 +44,8 @@ CoffeeCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   roastType: PropTypes.string,
-  roastValue: PropTypes.number,
-  price: PropTypes.number,
+  roastValue: PropTypes.string,
+  price: PropTypes.string,
   coffeeId: PropTypes.string
 };
 
