@@ -16,7 +16,7 @@ class App extends React.Component {
     };
     this.handleAddingNewCoffee = this.handleAddingNewCoffee.bind(this);
     this.handleDeletingCoffee = this.handleDeletingCoffee.bind(this);
-  };
+  }
 
   handleAddingNewCoffee(newCoffee){
     let newCoffeeId = v4();
@@ -33,7 +33,6 @@ class App extends React.Component {
   }
 
   render () {
-    console.log(this.state.masterCoffeeList);
     return (
       <div>
         <Header/>

@@ -1,7 +1,7 @@
 import React from 'react';
 import CoffeeCard from './CoffeeCard';
 import 'materialize-css/dist/css/materialize.min.css';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 function CoffeeCards(props) {
 
@@ -10,9 +10,15 @@ function CoffeeCards(props) {
     color: '#2c2321',
     fontFamily: 'Libre Franklin, sans-serif',
   };
+
+  let header = '';
+  if (Object.entries(props.coffeeList).length != 0){
+    header = <h3 style={headerText}>Our Coffees</h3>;
+  }
+
   return (
     <div className='container'>
-      <h3 style={headerText}>Our Coffees</h3>
+      {header}
       <div className='row'>
         {Object.keys(props.coffeeList).map((coffeeId) => {
           let coffee = props.coffeeList[coffeeId];

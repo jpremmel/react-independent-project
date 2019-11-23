@@ -20,10 +20,6 @@ class NewPage extends React.Component {
   handleAddNewCoffee(event) {
     event.preventDefault();
     let { roast } = this.form;
-
-    console.log('Title: ', this._title.value)
-    console.log('Roast: ', this._roastValue.value);
-    console.log('Price: ', this._price.value);
     if (this._title.value) {
       this.props.onNewCoffeeCreation({ 
         title: this._title.value, 
