@@ -4,6 +4,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import PropTypes from 'prop-types'
 
 function CoffeeCards(props) {
+
   let headerText = {
     textAlign: 'center',
     color: '#2c2321',
@@ -23,6 +24,7 @@ function CoffeeCards(props) {
             price={coffee.price}
             coffeeId={coffeeId}
             key={coffeeId} 
+            onDeletingCoffee={props.onDeletingCoffee}
           />;
         })}
       </div>
@@ -31,7 +33,8 @@ function CoffeeCards(props) {
 }
 
 CoffeeCards.propTypes = {
-  coffeeList: PropTypes.object
+  coffeeList: PropTypes.object,
+  onDeletingCoffee: PropTypes.func
 };
 
 export default CoffeeCards;

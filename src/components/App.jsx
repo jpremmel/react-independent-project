@@ -5,6 +5,7 @@ import HomePage from './HomePage';
 import LoginPage from './LoginPage';
 import NewPage from './NewPage';
 import { v4 } from 'uuid';
+import { cloneDeep } from 'lodash';
 
 class App extends React.Component {
 
@@ -14,6 +15,7 @@ class App extends React.Component {
       masterCoffeeList: {}
     };
     this.handleAddingNewCoffee = this.handleAddingNewCoffee.bind(this);
+    this.handleDeletingCoffee = this.handleDeletingCoffee.bind(this);
   };
 
   handleAddingNewCoffee(newCoffee){
@@ -24,6 +26,12 @@ class App extends React.Component {
     this.setState({ masterCoffeeList: copyCoffeeList });
   }
 
+  handleDeletingCoffee(coffeeId){
+    let copyCoffeeList = cloneDeep(this.state.masterCoffeeList);
+    delete copyCoffeeList[coffeeId];
+    this.setState({ masterCoffeeList: copyCoffeeList });
+  }
+
   render () {
     console.log(this.state.masterCoffeeList);
     return (
@@ -31,7 +39,8 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={() => <HomePage
-            coffeeList={this.state.masterCoffeeList} />}/>
+            coffeeList={this.state.masterCoffeeList}
+            onDeletingCoffee={this.handleDeletingCoffee} />}/>
           <Route path='/login' component={LoginPage} />
           <Route path='/new' render={() => <NewPage
             onNewCoffeeCreation={this.handleAddingNewCoffee} />}/>

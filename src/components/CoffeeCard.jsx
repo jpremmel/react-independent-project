@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'materialize-css/dist/css/materialize.min.css';
-import { Link } from 'react-router-dom';
 
 function CoffeeCard(props) {
+
+  function handleDeleteCoffee(){
+    props.onDeletingCoffee(props.coffeeId);
+  }
 
   let cardStyle = {
     backgroundColor: '#caad8c'
@@ -38,6 +41,13 @@ function CoffeeCard(props) {
   let darkText = {
     color: '#2c2321'
   };
+  let btnParentStyle = {
+    marginTop: '10px',
+    textAlign: 'center'
+  };
+  let btnStyle = {
+    backgroundColor: '#2c2321'
+  };
   return (
     <div className="col s12 m6 l4">
       <div className="card darken-1" style={cardStyle}>
@@ -46,6 +56,9 @@ function CoffeeCard(props) {
           <p style={darkText}>{props.description}</p>
           {roast}
           {price}
+          <div style={btnParentStyle}>
+            <button style={btnStyle} className="btn-small waves-effect waves-light" onClick={handleDeleteCoffee}><i className="material-icons">delete</i></button>
+          </div>
         </div>
       </div>
     </div>
@@ -58,7 +71,8 @@ CoffeeCard.propTypes = {
   roastType: PropTypes.string,
   roastValue: PropTypes.string,
   price: PropTypes.string,
-  coffeeId: PropTypes.string
+  coffeeId: PropTypes.string,
+  onDeletingCoffee: PropTypes.func
 };
 
 export default CoffeeCard;

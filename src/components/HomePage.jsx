@@ -9,14 +9,16 @@ function HomePage(props) {
     <div>
       <CoffeeImg/>
       <CoffeeCards 
-        coffeeList={props.coffeeList}/>
+        coffeeList={props.coffeeList}
+        onDeletingCoffee={props.onDeletingCoffee}/>
       <LoginButton/>
     </div>
   );
 }
 
 HomePage.propTypes = {
-  coffeeList: PropTypes.object
+  coffeeList: PropTypes.object,
+  onDeletingCoffee: PropTypes.func
 };
 
 export default HomePage;
