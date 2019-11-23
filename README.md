@@ -1,12 +1,12 @@
 # _Java House_
 
-#### _A site for a fictional coffee supplier created with React, 22 Nov 2019_
+#### _A site for a fictional coffee supplier created with React, 23 Nov 2019_
 
 #### By _**Jacqueline Remmel**_
 
 ## Description
 
-_This is an ongoing project that will ultimately be a mock site for a coffee supplier. Patrons will be able to view the coffee house's menu and employees will be able to log in to manage the inventory. The main purpose of this project is to practice building a site with React._
+_This project is a mock site for a coffee supplier. The home page displays the coffee house's menu and employees can manage the inventory. The main purpose of this project is to practice building a site with React and managing state._
 
 _Component Structure:_
 
