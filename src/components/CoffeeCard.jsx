@@ -17,6 +17,18 @@ function CoffeeCard(props) {
       backgroundColor: '#9f602d'
     };
   }
+
+  let roast = '';
+  if (props.roastValue) {
+    roast = <p style={darkText}><strong>Roast:</strong> {props.roastType} ({props.roastValue}/10)</p>;
+  } else if (props.roastType) {
+    roast = <p style={darkText}><strong>Roast:</strong> {props.roastType}</p>;
+  }
+
+  let price = '';
+  if (props.price) {
+    price = <p style={darkText}><strong>Price: </strong>${props.price} per pound</p>;
+  }
   
   let titleStyle = {
     textAlign: 'center',
@@ -32,8 +44,8 @@ function CoffeeCard(props) {
         <div className="card-content">
           <span className="card-title" style={titleStyle}>{props.title}</span>
           <p style={darkText}>{props.description}</p>
-          <p style={darkText}><strong>Roast:</strong> {props.roastType} ({props.roastValue}/10)</p>
-          <p style={darkText}><strong>Price: </strong>${props.price} per pound</p>
+          {roast}
+          {price}
         </div>
       </div>
     </div>
