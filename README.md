@@ -20,7 +20,8 @@ _Component Structure:_
 * _Clone this repository_
 * _Navigate to the project directory, "react-independent-project"_
 * _Run the command "npm install"_
-* _Run the command "dotnet watch run"_
+* _Run the command "npm run start"_
+* _Go to the URL "http://localhost:8080/" in a browser_
 
 ## Technologies Used
 
